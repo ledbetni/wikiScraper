@@ -2,13 +2,17 @@ import requests
 import json
 
 def main():
-    while True:
+    getItem = input("Enter the topic you would like to learn more about, enter exit to quit: ")
+    while (getItem != ("exit" or "Exit")):
+        if (getItem == ("exit" or "Exit")):
+            break
         url = "http://localhost:1400"
-        getItem = input("Enter the topic you would like to learn more about: ")
         itemDict = {'item': str(getItem)}
         postItem = requests.post(url,data=itemDict)
         postRes = postItem.json()
         print(str(postRes))
+        print("-------------------------------------")
+        getItem = input("Enter the topic you would like to learn more about, enter exit to quit: ")
         #itemStr = postItem.text
 
 main()
