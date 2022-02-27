@@ -16,6 +16,8 @@ class MainHandler(tornado.web.RequestHandler):
         import warnings
         warnings.catch_warnings()
         warnings.simplefilter("ignore")
+        #CHANGE LANGUAGE SETTING
+        #wikipedia.set_lang("fr")
         try:
             itemPage = wikipedia.page(item)
             print(itemPage.summary)
